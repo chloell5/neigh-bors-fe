@@ -15,7 +15,7 @@ RSpec.describe 'Welcome' do
     expect(current_path).to eq(login_path)
   end
 
-  xit 'links to the registration page' do
+  it 'links to the registration page' do
     visit root_path
 
     click_button 'Register'
@@ -23,11 +23,11 @@ RSpec.describe 'Welcome' do
     expect(current_path).to eq(register_path)
   end
 
-  xit 'links to the resources page' do
+  it 'links to the resources page' do
     visit root_path
 
-    click_link 'Register'
+    click_link 'Resources'
 
-    expect(current_path).to eq(register_path)
+    expect(current_path).to eq(resources_path)
   end
 end
