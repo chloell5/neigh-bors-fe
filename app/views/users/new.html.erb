@@ -1,0 +1,117 @@
+<div class="container">
+  <h1 class="text-center">Register</h1>
+  <br>
+  <br>
+
+  <%= form_with url: login_path, method: :post do |form| %>
+    <div class="row">
+      <div class="col-1">
+      </div>
+      <div class="col-2">
+        <%= form.label :username, "Name:" %>
+      </div>
+      <div class="col-2">
+        <%= form.text_field :name %>
+      </div>
+      <div class="col-1">
+      </div>
+      <div class="col-2">
+        <%= form.label :address, "Address:" %>
+      </div>
+      <div class="col-2">
+        <%= form.text_field :address %>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-1">
+      </div>
+      <div class="col-2">
+        <%= form.label :email, "Email:" %>
+      </div>
+      <div class="col-2">
+        <%= form.text_field :email %>
+      </div>
+      <div class="col-1">
+      </div>
+      <div class="col-2">
+        <%= form.label :password, "Password:" %>
+      </div>
+      <div class="col-2">
+        <%= form.password_field :password %>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-1">
+      </div>
+      <div class="col-2">
+        <%= form.label :phone, "Phone Number:" %>
+      </div>
+      <div class="col-2">
+        <%= form.telephone_field :phone %>
+      </div>
+      <div class="col-1">
+      </div>
+      <div class="col-2">
+        <%= form.label :horses, "Number of Horses:" %>
+      </div>
+      <div class="col-2">
+        <%= form.number_field :horses %>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-1">
+      </div>
+      <div class="col-2">
+        <%= form.label :needs, "Special Needs?" %>
+      </div>
+      <div class="col-2">
+        <%= form.radio_button :needs, true %>Yes &nbsp;
+        <%= form.radio_button :needs, false %>No
+      </div>
+      <div class="col-1">
+      </div>
+      <div class="col-2">
+        <%= form.label :needs_text, "If yes, please specify:" %>
+      </div>
+      <div class="col-2">
+        <%= form.text_field :needs_text %>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-1">
+      </div>
+      <div class="col-2">
+        <%= form.label :trailer, "Trailer Carrying Capacity:" %>
+      </div>
+      <div class="col-2">
+        <%= form.text_field :trailer %>
+      </div>
+      <div class="col-1">
+      </div>
+      <div class="col-2">
+        <%= form.label :sharing, "Share info with local animal shelters?" %>
+      </div>
+      <div class="col-2">
+        <%= form.radio_button :needs, true %>Yes &nbsp;
+        <%= form.radio_button :needs, false %>No
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-6">
+      </div>
+      <div class="col-1">
+        <%= form.submit "Register" %>
+      </div>
+    </div>
+  <% end %>
+</div>
