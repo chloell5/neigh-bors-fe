@@ -1,0 +1,36 @@
+<div class="page-container">
+  <h1 class="text-center">Login</h1>
+  <br>
+  <br>
+  <%= form_with url: login_path, method: :post do |form| %>
+    <div class="row">
+      <div class="col-5">
+      </div>
+      <div class="col-1">
+        <%= form.label :username, "Username:" %>
+      </div>
+      <div class="col-6">
+        <%= form.text_field :username %>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-5">
+      </div>
+      <div class="col-1">
+        <%= form.label :password, "Password:" %>
+      </div>
+      <div class="col-6">
+        <%= form.text_field :password %>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-6">
+      </div>
+      <div class="col-1">
+        <%= form.submit "Log In" %>
+      </div>
+    </div>
+  <% end %>
+</div>
