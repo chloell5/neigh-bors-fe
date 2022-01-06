@@ -7,7 +7,7 @@ RSpec.describe 'Welcome' do
     expect(page.find('#title-img')['src']).to have_content('neighbors-cover.jpg')
   end
 
-  xit 'links to the Login page' do
+  it 'links to the Login page' do
     visit root_path
 
     click_button 'Login'
