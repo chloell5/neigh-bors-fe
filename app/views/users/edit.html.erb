@@ -1,9 +1,9 @@
 <div class="container">
-  <h1 class="text-center">Register</h1>
+  <h1 class="text-center"><%= @user.name %>'s Edit</h1>
   <br>
   <br>
 
-  <%= form_with url: login_path, method: :post do |form| %>
+  <%= form_with url: user_path, method: :patch do |form| %>
     <div class="row">
       <div class="col-1">
       </div>
@@ -11,7 +11,7 @@
         <%= form.label :username, "Name:" %>
       </div>
       <div class="col-2">
-        <%= form.text_field :name %>
+        <%= form.text_field :name, value: @user.name %>
       </div>
       <div class="col-1">
       </div>
@@ -19,7 +19,7 @@
         <%= form.label :address, "Address:" %>
       </div>
       <div class="col-2">
-        <%= form.text_field :address %>
+        <%= form.text_field :address, value: @user.address %>
       </div>
     </div>
     <br>
@@ -31,7 +31,7 @@
         <%= form.label :email, "Email:" %>
       </div>
       <div class="col-2">
-        <%= form.text_field :email %>
+        <%= form.text_field :email, value: @user.email %>
       </div>
       <div class="col-1">
       </div>
@@ -51,7 +51,7 @@
         <%= form.label :phone, "Phone Number:" %>
       </div>
       <div class="col-2">
-        <%= form.telephone_field :phone %>
+        <%= form.telephone_field :phone, value: @user.phone %>
       </div>
       <div class="col-1">
       </div>
@@ -59,7 +59,7 @@
         <%= form.label :horses, "Number of Horses:" %>
       </div>
       <div class="col-2">
-        <%= form.number_field :horses %>
+        <%= form.number_field :horses, value: @user.horses %>
       </div>
     </div>
     <br>
@@ -80,7 +80,7 @@
         <%= form.label :needs_text, "If yes, please specify:" %>
       </div>
       <div class="col-2">
-        <%= form.text_field :needs_text %>
+        <%= form.text_field :needs_text, value: @user.needs_text %>
       </div>
     </div>
     <br>
@@ -92,7 +92,7 @@
         <%= form.label :trailer, "Trailer Carrying Capacity:" %>
       </div>
       <div class="col-2">
-        <%= form.text_field :trailer %>
+        <%= form.text_field :trailer, value: @user.trailer %>
       </div>
       <div class="col-1">
       </div>
@@ -110,7 +110,7 @@
       <div class="col-6">
       </div>
       <div class="col-1">
-        <%= form.submit "Register" %>
+        <%= form.submit "Submit" %>
       </div>
     </div>
   <% end %>

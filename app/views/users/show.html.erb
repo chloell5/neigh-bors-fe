@@ -1,0 +1,104 @@
+<div class="page-container">
+  <div class="content-wrap">
+    <h1 class="text-center"><%= @user.name %>'s Dashboard</h1>
+    <br>
+
+    <div class="row">
+      <div class="col-3">
+      </div>
+      <div class="col-3">
+        <div class="text-center">
+          <%= button_to 'Request Rescue' %>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="text-center">
+          <%= button_to 'Provide Assistance' %>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-2">
+      </div>
+      <div class="col-2">
+        <h3>User Info:</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+      </div>
+      <div class="col-2">
+        <p>
+          Name: <%= @user.name %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+      </div>
+      <div class="col-2">
+        <p>
+          Address: <%= @user.address %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+      </div>
+      <div class="col-2">
+        <p>
+          Phone #: <%= @user.phone %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+      </div>
+      <div class="col-2">
+        <p>
+          Email: <%= @user.email %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+      </div>
+      <div class="col-2">
+        <p>
+          Number of Horses: <%= @user.horses %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+      </div>
+      <div class="col-2">
+        <p>
+          Trailer Carrying Capacity: <%= @user.trailer %>
+        </p>
+      </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col-3">
+      </div>
+      <div class="col-2">
+        <%= button_to 'Edit', edit_user_path(@user), method: :get %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class ="footer">
+  <%= link_to "Resources", resources_path %>
+</div>
