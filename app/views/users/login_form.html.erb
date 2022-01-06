@@ -1,7 +1,8 @@
-<div class="page-container">
+<div class="container">
   <h1 class="text-center">Login</h1>
   <br>
   <br>
+  
   <%= form_with url: login_path, method: :post do |form| %>
     <div class="row">
       <div class="col-5">
@@ -14,6 +15,7 @@
       </div>
     </div>
     <br>
+
     <div class="row">
       <div class="col-5">
       </div>
@@ -21,10 +23,11 @@
         <%= form.label :password, "Password:" %>
       </div>
       <div class="col-6">
-        <%= form.text_field :password %>
+        <%= form.password_field :password %>
       </div>
     </div>
     <br>
+
     <div class="row">
       <div class="col-6">
       </div>
@@ -33,4 +36,13 @@
       </div>
     </div>
   <% end %>
+  <br>
+
+  <div class="row">
+    <div class="col-6">
+    </div>
+    <div class="col-1">
+      <%= button_to 'Sign in with Google' %>
+    </div>
+  </div>
 </div>
