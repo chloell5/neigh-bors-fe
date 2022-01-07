@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  def login
+  def dashboard
   end
-  
+
   def new
   end
 end
