@@ -3,7 +3,7 @@ class UserFacade
     def user_by_email(email)
       data = UserService.get_data("users?email=#{email}")[:data]
 
-      User.new(data)
+      Reguser.new(data)
     end
   end
 end

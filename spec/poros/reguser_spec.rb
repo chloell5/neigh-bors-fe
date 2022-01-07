@@ -1,9 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe User do
+RSpec.describe Reguser do
   let(:data) do
     {
         "id": "1",
+        "type": "user",
         "attributes": {
             "name": "Bob",
             "email": "bob@bb.com",
@@ -14,10 +15,10 @@ RSpec.describe User do
     }
   end
 
-  let(:user) { User.new(data) }
+  let(:user) { Reguser.new(data) }
 
   it 'exists with attributes' do
-    expect(user).to be_a(User)
+    expect(user).to be_a(Reguser)
 
     expect(user.name).to eq('Bob')
     expect(user.email).to eq('bob@bb.com')
