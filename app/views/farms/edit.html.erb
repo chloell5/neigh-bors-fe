@@ -1,25 +1,25 @@
 <div class="container">
-  <h1 class="text-center"><%= @user.name %>'s Edit</h1>
+  <h1 class="text-center"><%= @farm.name %>'s Edit</h1>
   <br>
   <br>
 
-  <%= form_with url: user_path, method: :patch do |form| %>
+  <%= form_with url: farm_path, method: :patch do |form| %>
     <div class="row">
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :username, "Name:" %>
+        <%= form.label :farmname, "Name:" %>
       </div>
       <div class="col-2">
-        <%= form.text_field :name, value: @user.name %>
+        <%= form.text_field :name, value: @farm.name %>
       </div>
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :address, "Address:" %>
+        <%#= form.label :address, "Address:" %>
       </div>
       <div class="col-2">
-        <%= form.text_field :address, value: @user.address %>
+        <%#= form.text_field :address, value: @farm.address %>
       </div>
     </div>
     <br>
@@ -31,15 +31,15 @@
         <%= form.label :email, "Email:" %>
       </div>
       <div class="col-2">
-        <%= form.text_field :email, value: @user.email %>
+        <%= form.text_field :email, value: @farm.email %>
       </div>
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :password, "Password:" %>
+        <%#= form.label :password, "Password:" %>
       </div>
       <div class="col-2">
-        <%= form.password_field :password %>
+        <%#= form.password_field :password %>
       </div>
     </div>
     <br>
@@ -48,18 +48,18 @@
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :phone, "Phone Number:" %>
+        <%#= form.label :phone, "Phone Number:" %>
       </div>
       <div class="col-2">
-        <%= form.telephone_field :phone, value: @user.phone %>
+        <%#= form.telephone_field :phone, value: @farm.phone %>
       </div>
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :horses, "Number of Horses:" %>
+        <%#= form.label :horses, "Number of Horses:" %>
       </div>
       <div class="col-2">
-        <%= form.number_field :horses, value: @user.horses %>
+        <%#= form.number_field :horses, value: @farm.horses %>
       </div>
     </div>
     <br>
@@ -68,19 +68,19 @@
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :needs, "Special Needs?" %>
+        <%#= form.label :needs, "Special Needs?" %>
       </div>
       <div class="col-2">
-        <%= form.radio_button :needs, true %>Yes &nbsp;
-        <%= form.radio_button :needs, false %>No
+        <%#= form.radio_button :needs, true %>Yes &nbsp;
+        <%#= form.radio_button :needs, false %>No
       </div>
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :needs_text, "If yes, please specify:" %>
+        <%#= form.label :needs_text, "If yes, please specify:" %>
       </div>
       <div class="col-2">
-        <%= form.text_field :needs_text, value: @user.needs_text %>
+        <%#= form.text_field :needs_text, value: @farm.needs_text %>
       </div>
     </div>
     <br>
@@ -89,19 +89,19 @@
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :trailer, "Trailer Carrying Capacity:" %>
+        <%#= form.label :trailer, "Trailer Carrying Capacity:" %>
       </div>
       <div class="col-2">
-        <%= form.text_field :trailer, value: @user.trailer %>
+        <%#= form.text_field :trailer, value: @farm.trailer %>
       </div>
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :sharing, "Share info with local animal shelters?" %>
+        <%#= form.label :sharing, "Share info with local animal shelters?" %>
       </div>
       <div class="col-2">
-        <%= form.radio_button :sharing, true %>Yes &nbsp;
-        <%= form.radio_button :sharing, false %>No
+        <%#= form.radio_button :sharing, true %>Yes &nbsp;
+        <%#= form.radio_button :sharing, false %>No
       </div>
     </div>
     <br>

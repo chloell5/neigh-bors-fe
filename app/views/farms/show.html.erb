@@ -1,6 +1,6 @@
 <div class="page-container">
   <div class="content-wrap">
-    <h1 class="text-center"><%= @user.name %>'s Dashboard</h1>
+    <h1 class="text-center"><%= @farm.name %>'s Dashboard</h1>
     <br>
 
     <div class="row">
@@ -32,7 +32,7 @@
       </div>
       <div class="col-2">
         <p>
-          Name: <%= @user.name %>
+          Name: <%= @farm.name %>
         </p>
       </div>
     </div>
@@ -42,7 +42,7 @@
       </div>
       <div class="col-2">
         <p>
-          Address: <%= @user.address %>
+          Address: <%#= @farm.address %>
         </p>
       </div>
     </div>
@@ -52,7 +52,7 @@
       </div>
       <div class="col-2">
         <p>
-          Phone #: <%= @user.phone %>
+          Phone #: <%#= @farm.phone %>
         </p>
       </div>
     </div>
@@ -62,7 +62,7 @@
       </div>
       <div class="col-2">
         <p>
-          Email: <%= @user.email %>
+          Email: <%= @farm.email %>
         </p>
       </div>
     </div>
@@ -72,7 +72,7 @@
       </div>
       <div class="col-2">
         <p>
-          Number of Horses: <%= @user.horses %>
+          Number of Horses: <%#= @farm.horses %>
         </p>
       </div>
     </div>
@@ -82,7 +82,7 @@
       </div>
       <div class="col-2">
         <p>
-          Trailer Carrying Capacity: <%= @user.trailer %>
+          Trailer Carrying Capacity: <%#= @farm.trailer %>
         </p>
       </div>
     </div>
@@ -93,7 +93,7 @@
       <div class="col-3">
       </div>
       <div class="col-2">
-        <%= button_to 'Edit', edit_user_path(@user), method: :get %>
+        <%= button_to 'Edit', edit_farm_path(@farm), method: :get %>
       </div>
     </div>
   </div>

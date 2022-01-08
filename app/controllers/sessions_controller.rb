@@ -6,7 +6,13 @@ class SessionsController < ApplicationController
 
     session[:user_id] = user.id
 
-    redirect_to register_path
+    all_users = User.all
+
+    if all_users.include?(user.email)
+      redirect_to dashboard_path
+    else
+      redirect_to register_path
+    end
   end
 
   def destroy
