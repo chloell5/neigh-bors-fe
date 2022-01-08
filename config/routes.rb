@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
   #get '/login', to: 'users#login_form'
   resources :resources, only: :index
+
+  get 'texts', to: 'texts#index'
+  post '/texts/new', to: 'texts#create'
 end
