@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     all_users = User.all
 
-    if User.all.include?(user.email)
+    if all_users.include?(user.email)
       redirect_to dashboard_path
     else
       redirect_to register_path

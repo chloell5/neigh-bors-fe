@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
   get '/dashboard', to: 'users#dashboard'
   resources :resources, only: :index
+  get '/dashboard/missions/:id', to: 'missions#show'
 end

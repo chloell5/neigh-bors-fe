@@ -1,1 +1,7 @@
-<h1>Register</h1>
+<h1>Register Farm</h1>
+
+<%= form_with url: register_path, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.submit "Submit" %>
+<% end %>
