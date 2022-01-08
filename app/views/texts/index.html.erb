@@ -1,0 +1,9 @@
+<h1>Texts Index</h1>
+
+<%= form_with url: "/texts/new", method: :post, local: true do |f| %>
+  <%= f.label :recipient_number %>
+  <%= f.text_field :recipient_number, required: true  %><br>
+  <%= f.label :message %>
+  <%= f.text_field :message, required: true %><br>
+  <%= f.submit %>
+<% end %>
