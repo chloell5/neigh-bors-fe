@@ -40,6 +40,7 @@ gem 'twilio-ruby'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'faraday'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -67,7 +68,6 @@ end
 
 group :development, :test do
   gem 'pry'
-  gem 'figaro'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

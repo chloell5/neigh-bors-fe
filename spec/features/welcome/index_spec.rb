@@ -10,9 +10,9 @@ RSpec.describe 'Welcome' do
   it 'links to the Login page' do
     visit root_path
 
-    click_button 'Login'
+    click_button 'Login with Google'
 
-    expect(current_path).to eq(login_path)
+    expect(current_path).to eq(oauth_path)
   end
 
   it 'links to the registration page' do
