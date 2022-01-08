@@ -15,14 +15,6 @@ RSpec.describe 'Welcome' do
     expect(current_path).to eq(oauth_path)
   end
 
-  it 'links to the registration page' do
-    visit root_path
-
-    click_button 'Register'
-
-    expect(current_path).to eq(register_path)
-  end
-
   it 'links to the resources page' do
     visit root_path
 

@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="text-center">Register</h1>
+  <h1 class="text-center">Register Your Farm</h1>
   <br>
   <br>
 
@@ -8,7 +8,7 @@
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :username, "Name:" %>
+        <%= form.label :username, "Farm Name:" %>
       </div>
       <div class="col-2">
         <%= form.text_field :name %>
@@ -16,7 +16,7 @@
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :address, "Address:" %>
+        <%= form.label :address, "Farm Address:" %>
       </div>
       <div class="col-2">
         <%= form.text_field :address %>
@@ -28,18 +28,18 @@
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :email, "Email:" %>
+        <%#= form.label :phone, "Phone Number:" %>
       </div>
       <div class="col-2">
-        <%= form.text_field :email %>
+        <%#= form.telephone_field :phone %>
       </div>
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :password, "Password:" %>
+        <%= form.label :number_of_animals, "Number of Horses:" %>
       </div>
       <div class="col-2">
-        <%= form.password_field :password %>
+        <%= form.number_field :number_of_animals %>
       </div>
     </div>
     <br>
@@ -48,63 +48,43 @@
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :phone, "Phone Number:" %>
+        <%= form.label :special_needs?, "Special Needs?" %>
       </div>
       <div class="col-2">
-        <%= form.telephone_field :phone %>
+        <%= form.radio_button :special_needs?, true %>Yes &nbsp;
+        <%= form.radio_button :special_needs?, false %>No
       </div>
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :horses, "Number of Horses:" %>
+        <%= form.label :special_needs_details, "If yes, please specify:" %>
       </div>
       <div class="col-2">
-        <%= form.number_field :horses %>
+        <%= form.text_field :special_needs_details %>
       </div>
     </div>
     <br>
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :needs, "Special Needs?" %>
+        <%#= form.label :trailer, "Trailer Carrying Capacity:" %>
       </div>
       <div class="col-2">
-        <%= form.radio_button :needs, true %>Yes &nbsp;
-        <%= form.radio_button :needs, false %>No
+        <%#= form.text_field :trailer %>
       </div>
       <div class="col-1">
       </div>
       <div class="col-2">
-        <%= form.label :needs_text, "If yes, please specify:" %>
+        <%#= form.label :sharing, "Share info with local animal shelters?" %>
       </div>
       <div class="col-2">
-        <%= form.text_field :needs_text %>
+        <%#= form.radio_button :sharing, true %>Yes &nbsp;
+        <%#= form.radio_button :sharing, false %>No
       </div>
     </div>
-    <br>
-
-    <div class="row">
-      <div class="col-1">
-      </div>
-      <div class="col-2">
-        <%= form.label :trailer, "Trailer Carrying Capacity:" %>
-      </div>
-      <div class="col-2">
-        <%= form.text_field :trailer %>
-      </div>
-      <div class="col-1">
-      </div>
-      <div class="col-2">
-        <%= form.label :sharing, "Share info with local animal shelters?" %>
-      </div>
-      <div class="col-2">
-        <%= form.radio_button :sharing, true %>Yes &nbsp;
-        <%= form.radio_button :sharing, false %>No
-      </div>
-    </div>
-    <br>
+    <br> -->
 
     <div class="row">
       <div class="col-6">
