@@ -1,7 +1,4 @@
 class FarmsController < ApplicationController
-  def login
-  end
-
   def new
   end
 
@@ -22,6 +19,6 @@ class FarmsController < ApplicationController
   private
 
   def farm_params
-    # params.permit(:name, :address, :email, :password, :phone, :horses, :needs, :needs_text, :trailer, :sharing)
+    params.permit(:name, :address, :number_of_animals, :special_needs?, :special_needs_details)
   end
 end
