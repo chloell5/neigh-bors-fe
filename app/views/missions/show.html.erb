@@ -1,0 +1,9 @@
+<h1><%= @evacuee.farm.name %><br></h1>
+
+Address: <%= @evacuee.farm.address %><br>
+
+Contact Number: <%= @evacuee.phone %><br>
+
+Directions: <% @directions.each do |dir| %>
+  <li><%= dir %></li>
+<% end %>

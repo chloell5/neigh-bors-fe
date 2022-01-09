@@ -6,6 +6,12 @@ class UserFacade
       Reguser.new(data)
     end
 
+    def find_by_id(id)
+      data = UserService.get_data("users/#{id}")[:data]
+
+      Reguser.new(data)
+    end
+
     def farms
       farms = UserService.get_data("farms")[:data]
 
