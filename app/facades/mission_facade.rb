@@ -5,5 +5,13 @@ class MissionFacade
 
       mission = Mission.new(data)
     end
+
+    def all_missions
+      data = UserService.get_data("missions")
+
+      data.map do |mission|
+        Mission.new(mission)
+      end  
+    end
   end
 end
