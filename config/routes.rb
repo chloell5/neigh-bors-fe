@@ -14,4 +14,7 @@ Rails.application.routes.draw do
 
   get 'texts', to: 'texts#index'
   post '/texts/new', to: 'texts#create'
+
+
+  get '/missions/:mission_id', to: 'missions#show', as: 'mission_show'
 end

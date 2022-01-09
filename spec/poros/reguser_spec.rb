@@ -28,4 +28,23 @@ RSpec.describe Reguser do
     expect(user.trailer_capacity).to eq(0)
     expect(user.address).to eq('5598 W 72nd Pl, Arvada, CO 80003')
   end
+
+  it 'finds a users farm' do
+    @farm = {
+              "id": "1",
+              "type": "farm",
+              "attributes": {
+                  "name": "Hillsdale Farm",
+                  "address": "5598 W 72nd Pl, Arvada, CO 80003",
+                  "number_of_animals": 3,
+                  "special_needs?": false,
+                  "special_needs_details": "n/a",
+                  "user_id": 1
+              }
+          }
+
+    expect(user.farm.name).to eq(@farm[:attributes][:name])
+    expect(user.farm.address).to eq(@farm[:attributes][:address])
+    expect(user.farm.user_id).to eq(@farm[:attributes][:user_id])
+  end
 end
