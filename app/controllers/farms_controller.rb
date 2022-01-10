@@ -8,8 +8,8 @@ class FarmsController < ApplicationController
   end
 
   def show
-    require "pry"; binding.pry
-    @farm = Farm.find(params[:id])
+    @farm = FarmFacade.find_farm(2)
+    @user = UserFacade.find_by_id(2)
   end
 
   def edit

@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get '/register', to: 'farms#new'
   post '/register', to: 'farms#create'
   get '/dashboard', to: 'farms#show'
+
+  get '/missions', to: 'missions#new'
+  post '/missions', to: 'missions#create'
+
   #get '/login', to: 'users#login_form'
   resources :farms, only: [:show, :edit]
   resources :resources, only: :index

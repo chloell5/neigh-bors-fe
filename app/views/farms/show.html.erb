@@ -14,6 +14,12 @@
       <div class="col-3">
         <div class="text-center">
           <%= button_to 'Provide Assistance' %>
+          <p>Current availability status:</p>
+          <% if @user.available == true %>
+          <%= 'Available for rescue assignment' %>
+          <% else %>
+          <%=  'Unavailable' %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -42,7 +48,7 @@
       </div>
       <div class="col-2">
         <p>
-          Address: <%#= @farm.address %>
+          Address: <%= @farm.address %>
         </p>
       </div>
     </div>
@@ -52,7 +58,7 @@
       </div>
       <div class="col-2">
         <p>
-          Phone #: <%#= @farm.phone %>
+          Phone #: <%= @user.phone %>
         </p>
       </div>
     </div>
@@ -62,7 +68,7 @@
       </div>
       <div class="col-2">
         <p>
-          Email: <%= @farm.email %>
+          Email: <%= @user.email %>
         </p>
       </div>
     </div>
@@ -72,7 +78,7 @@
       </div>
       <div class="col-2">
         <p>
-          Number of Horses: <%#= @farm.horses %>
+          Number of Horses: <%= @farm.animals %>
         </p>
       </div>
     </div>
@@ -82,7 +88,7 @@
       </div>
       <div class="col-2">
         <p>
-          Trailer Carrying Capacity: <%#= @farm.trailer %>
+          Trailer Carrying Capacity: <%= @user.trailer_capacity %>
         </p>
       </div>
     </div>
