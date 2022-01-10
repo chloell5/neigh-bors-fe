@@ -1,7 +1,7 @@
 class UserService
   class << self
     def conn
-      conn = Faraday.new(url: ENV['backend_api_path'])
+      conn = Faraday.new(url: 'http://localhost:3000/api/v1')
     end
 
     def get_data(url)

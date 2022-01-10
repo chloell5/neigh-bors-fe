@@ -3,12 +3,12 @@ class FarmsController < ApplicationController
   end
 
   def create
-    farm = Farm.create(farm_params)
-
-    redirect_to farm_path(farm)
+    farm = FarmFacade.farm_create(farm_params)
+    redirect_to '/dashboard'
   end
 
   def show
+    require "pry"; binding.pry
     @farm = Farm.find(params[:id])
   end
 

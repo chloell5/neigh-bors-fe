@@ -1,7 +1,7 @@
 class FarmService
   class << self
     def conn
-      conn = Faraday.new(url: ENV['backend_api_path'])
+      conn = Faraday.new(url: 'http://localhost:3000/api/v1')
     end
 
     def get_data(url)
@@ -11,7 +11,7 @@ class FarmService
     end
 
     def post_data(url)
-      response = conn.get(url)
+      response = conn.post(url)
 
       JSON.parse(response.body, symbolize_names: true)
     end
