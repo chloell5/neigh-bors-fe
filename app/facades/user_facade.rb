@@ -1,8 +1,7 @@
 class UserFacade
   class << self
     def user_by_email(email)
-      data = UserService.get_data("users?email=#{email}")[:data]
-
+      data = UserService.get_data("users?email=#{email}")
       User.new(data)
     end
 

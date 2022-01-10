@@ -1,8 +1,7 @@
 class FarmFacade
   class << self
-    def farm_search(farm_name)
-      data = FarmService.get_data("farms?name=#{farm_name}")[:data]
-
+    def find_farm(current_user)
+      data = FarmService.get_data("farms?user_id=#{current_user}")[:data]
       farm = Farm.new(data)
     end
 
