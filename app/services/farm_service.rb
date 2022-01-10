@@ -1,4 +1,4 @@
-class UserService
+class FarmService
   class << self
     def conn
       conn = Faraday.new(url: 'http://localhost:3000/api/v1')
