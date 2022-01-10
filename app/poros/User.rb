@@ -1,4 +1,4 @@
-class Reguser
+class User
   attr_reader :id, :name, :email, :phone, :available, :trailer_capacity, :address
 
   def initialize(data)

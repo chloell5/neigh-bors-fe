@@ -3,13 +3,21 @@ class UserFacade
     def user_by_email(email)
       data = UserService.get_data("users?email=#{email}")[:data]
 
-      Reguser.new(data)
+      User.new(data)
+    end
+
+    def all_users
+      data = UserService.get_data("users")[:data]
+
+      data.map do |user|
+        User.new(user)
+      end
     end
 
     def find_by_id(id)
       data = UserService.get_data("users/#{id}")[:data]
 
-      Reguser.new(data)
+      User.new(data)
     end
 
     def farms
