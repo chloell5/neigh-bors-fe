@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/register', to: 'farms#create'
   get '/dashboard', to: 'farms#show'
 
-  get '/missions', to: 'missions#new'
+  get '/missions/new', to: 'missions#new'
   post '/missions', to: 'missions#create'
 
   #get '/login', to: 'users#login_form'

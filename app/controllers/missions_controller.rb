@@ -4,16 +4,20 @@ class MissionsController < ApplicationController
   end
 
   def show
-      mission = MissionFacade.mission_search(params[:mission_id])
-      rescuer = UserFacade.find_by_id("#{mission.rescuer_id}")
-      @evacuee = UserFacade.find_by_id("#{mission.evacuee_id}")
-      @directions = UserFacade.driving_directions(rescuer, @evacuee)
+    mission = MissionFacade.mission_search(params[:mission_id])
+    rescuer = UserFacade.find_by_id("#{mission.rescuer_id}")
+    @evacuee = UserFacade.find_by_id("#{mission.evacuee_id}")
+    @directions = UserFacade.driving_directions(rescuer, @evacuee)
   end
 
   def new
+    @farm = FarmFacade.find_farm(2)
+    @user = UserFacade.find_by_id(2)
   end
 
   def create
+    mission = MissionFacade.mission_create(mission_params)
+    redirect_to '/dashboard'
   end
 
   private

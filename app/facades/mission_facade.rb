@@ -11,7 +11,14 @@ class MissionFacade
 
       data.map do |mission|
         Mission.new(mission)
-      end  
+      end
+    end
+
+    def mission_create(mission_data)
+      data = MissionService.post_data(
+        "missions?user_id=#{session[:user_id]}")
+      farm = Farm.new(data)
+      require "pry"; binding.pry
     end
   end
 end
