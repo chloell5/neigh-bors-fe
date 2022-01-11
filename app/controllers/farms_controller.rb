@@ -8,7 +8,7 @@ class FarmsController < ApplicationController
   end
 
   def show
-    @farm = FarmFacade.find_farm(current_user.id).first
+    @farm = FarmFacade.find_farm(current_user.id)
     @user = UserFacade.find_by_id(current_user.id)
 
   end
