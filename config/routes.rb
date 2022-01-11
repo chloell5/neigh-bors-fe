@@ -13,13 +13,11 @@ Rails.application.routes.draw do
   get '/missions/new', to: 'missions#new'
   post '/missions', to: 'missions#create'
 
-  #get '/login', to: 'users#login_form'
   resources :farms, only: [:show, :edit]
   resources :resources, only: :index
 
   get 'texts', to: 'texts#index'
   post '/texts/new', to: 'texts#create'
-
 
   get '/missions/:mission_id', to: 'missions#show', as: 'mission_show'
 end

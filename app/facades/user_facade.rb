@@ -6,7 +6,7 @@ class UserFacade
     end
 
     def all_users
-      data = UserService.get_data("users")[:data]
+      data = UserService.get_data("users")
 
       data.map do |user|
         User.new(user)
@@ -14,20 +14,13 @@ class UserFacade
     end
 
     def find_by_id(id)
-      data = UserService.get_data("users/#{id}")[:data]
+      data = UserService.get_data("users/#{id}")
 
       User.new(data)
     end
 
-    def farms
-      farms = UserService.get_data("farms")[:data]
-
-      farms.map do |farm|
-        Farm.new(farm)
-      end
-    end
-
     def driving_directions(user1, user2)
+
       location1 = user1.address
       location2 = user2.address
 
