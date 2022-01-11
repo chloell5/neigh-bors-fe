@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create', as: 'oauth'
   get 'auth/failure', to: redirect('/')
 
-  get '/register', to: 'farms#new'
-  post '/register', to: 'farms#create'
+  get 'users/register', to: 'users#register'
+  patch 'users', to: 'users#edit'
+
+  get 'farms/register', to: 'farms#new'
+  post '/farms', to: 'farms#create'
   get '/dashboard', to: 'farms#show'
 
   get '/missions', to: 'missions#index'

@@ -12,10 +12,10 @@ class FarmFacade
       end
     end
 
-    def farm_create(farm_data)
+    def farm_create(farm_data, user_id)
       data = FarmService.post_data(
-        "farms?name=#{farm_data[:name]}&address=#{farm_data[:address]}&address=#{farm_data[:address]}&special_needs?=#{farm_data[:special_needs_details]}&user_id=#{session[:user_id]}")[:data]
-      farm = Farm.new(data)
+        "farms?&user_id=#{user_id.to_i}&name=#{farm_data[:name]}&address=#{farm_data[:address]}&address=#{farm_data[:address]}&special_needs?=#{farm_data[:special_needs_details]}")[:data]
+        farm = Farm.new(data)
     end
   end
 end
