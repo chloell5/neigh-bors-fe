@@ -3,7 +3,8 @@ class FarmsController < ApplicationController
   end
 
   def create
-    farm = FarmFacade.farm_create(farm_params)
+    user_id = session[:user_id]
+    farm = FarmFacade.farm_create(farm_params, user_id)
     redirect_to '/dashboard'
   end
 

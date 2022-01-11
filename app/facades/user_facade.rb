@@ -7,15 +7,22 @@ class UserFacade
 
     def all_users
       data = UserService.get_data("users")
-
       data.map do |user|
         User.new(user)
       end
     end
 
+    def create_user(data)
+      data = UserService.post_data("users?name=#{data[:name]}&email=#{data[:email]}&phone=#{data[:phone]}&address=#{data[:address]}")
+      User.new(data)
+    end
+
+    def update_user(data)
+      data = UserService.patch_data("users?name=#{data[:name]}&email=#{data[:email]}&phone=#{data[:phone]}&address=#{data[:address]}")
+    end
+
     def find_by_id(id)
       data = UserService.get_data("users/#{id}")
-
       User.new(data)
     end
 

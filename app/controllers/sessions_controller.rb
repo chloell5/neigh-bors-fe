@@ -14,7 +14,11 @@ class SessionsController < ApplicationController
 
       redirect_to dashboard_path
     else
-      redirect_to register_path
+      user = UserFacade.create_user(default_user_hash)
+
+      session[:user_id] = user.id
+
+      redirect_to '/users/register'
     end
   end
 
@@ -31,6 +35,15 @@ class SessionsController < ApplicationController
       full_name: auth_hash['info']['name'],
       google_id: auth_hash['uid'],
       google_token: auth_hash['credentials']['token']
+    }
+  end
+
+  def default_user_hash
+    {
+      name: helper_hash[:full_name],
+      email: helper_hash[:email],
+      address: 'default_address',
+      phone: 'default_phone'
     }
   end
 

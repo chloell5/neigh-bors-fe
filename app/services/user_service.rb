@@ -5,7 +5,7 @@ class UserService
     end
 
     def get_data(url)
-    
+
       response = conn.get(url)
 
       JSON.parse(response.body, symbolize_names: true)[:data]
@@ -13,6 +13,12 @@ class UserService
 
     def post_data(url)
       response = conn.post(url)
+
+      JSON.parse(response.body, symbolize_names: true)
+    end
+
+    def patch_data(url)
+      response = conn.patch(url)
 
       JSON.parse(response.body, symbolize_names: true)
     end
