@@ -2,7 +2,10 @@ class FarmFacade
   class << self
     def find_farm(current_user)
       data = FarmService.get_data("farms?user_id=#{current_user}")[:data]
-      farm = Farm.new(data)
+
+      data.map do |farm|
+        Farm.new(farm)
+      end
     end
 
     def all_farms
