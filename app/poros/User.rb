@@ -12,7 +12,7 @@ class User
   end
 
   def farm
-    farms = UserFacade.farms
+    farms = FarmFacade.all_farms
 
     farm = farms.map do |farm|
       if farm.user_id == @id.to_i

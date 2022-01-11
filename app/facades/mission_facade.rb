@@ -1,7 +1,7 @@
 class MissionFacade
   class << self
     def mission_search(mission_id)
-      data = MissionService.get_data("missions/#{mission_id}")[:data]
+      data = MissionService.get_data("missions/#{mission_id}")
 
       mission = Mission.new(data)
     end

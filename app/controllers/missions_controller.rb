@@ -5,6 +5,7 @@ class MissionsController < ApplicationController
 
   def show
     mission = MissionFacade.mission_search(params[:mission_id])
+
     rescuer = UserFacade.find_by_id("#{mission.rescuer_id}")
     @evacuee = UserFacade.find_by_id("#{mission.evacuee_id}")
     @directions = UserFacade.driving_directions(rescuer, @evacuee)

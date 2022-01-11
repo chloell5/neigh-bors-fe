@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Mission Facade' do
   it 'gets one mission' do
     evacuee = UserFacade.user_by_email('bob@bb.com')
-    rescuer = UserFacade.user_by_email('Jane@jj.com')
+    rescuer = UserFacade.user_by_email('mdodson55@gmail.com')
     response = MissionFacade.mission_search(1)
 
     expect(response.evacuee_id).to eq(evacuee.id.to_i)
