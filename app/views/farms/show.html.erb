@@ -13,7 +13,8 @@
       </div>
       <div class="col-3">
         <div class="text-center">
-          <%= button_to 'Provide Assistance' %>
+          <%= button_to 'Provide Assistance', '/missions', method: :get %> 
+          <br>
           <p>Current availability status:</p>
           <% if @user.available == true %>
           <%= 'Available for rescue assignment' %>
