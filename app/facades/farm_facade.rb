@@ -6,8 +6,7 @@ class FarmFacade
     end
 
     def all_farms
-      data = FarmService.get_data("farms")
-
+      data = FarmService.get_data("farms")[:data]
       data.map do |farm|
         Farm.new(farm)
       end

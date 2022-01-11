@@ -14,12 +14,10 @@ class User
   def farm
     farms = FarmFacade.all_farms
 
-    farm = farms.map do |farm|
-      if farm.user_id == @id.to_i
-        farm
-      end
+    farm = farms.find do |farm|
+      farm.user_id == @id.to_i
     end
-    farm.first
+    farm
   end
 
 end

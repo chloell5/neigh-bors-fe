@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'Mission Show' do
   it 'shows farm rescue info' do
-    rescuer = UserFacade.user_by_email('bob@bb.com')
-    evacuee = UserFacade.user_by_email('mdodson55@gmail.com')
+    rescuer = UserFacade.user_by_email('mdodson55@gmail.com')
+    evacuee = UserFacade.user_by_email('phmedlin@gmail.com')
     directions = UserFacade.driving_directions(rescuer, evacuee).join(', ')
 
-    mission = MissionFacade.mission_search(1)
+    mission = MissionFacade.mission_search(3)
 
     visit mission_show_path(mission.id)
 
