@@ -1,8 +1,6 @@
 class MissionsController < ApplicationController
   def index
-    @missions = MissionFacade.all_missions
-    user1 = UserFacade.find_by_id(current_user.id)
-    @distance = MissionFacade.distance(user1, user2)
+    @missions = MissionFacade.missions_near_rescuer(current_user)
   end
 
   def show
@@ -10,7 +8,7 @@ class MissionsController < ApplicationController
 
     rescuer = UserFacade.find_by_id("#{mission.rescuer_id}")
     @evacuee = UserFacade.find_by_id("#{mission.evacuee_id}")
-    @directions = UserFacade.driving_directions(rescuer, @evacuee)
+    @directions = MissionFacade.driving_directions(rescuer, @evacuee)
   end
 
   def new

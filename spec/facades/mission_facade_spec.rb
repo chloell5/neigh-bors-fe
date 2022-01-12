@@ -9,4 +9,32 @@ RSpec.describe 'Mission Facade' do
     expect(response.evacuee_id).to eq(evacuee.id.to_i)
     expect(response.rescuer_id).to eq(rescuer.id.to_i)
   end
+
+  it 'gets step-by-step driving directions' do
+    user2 = UserFacade.user_by_email('phmedlin@gmail.com')
+    user1 = UserFacade.user_by_email('mdodson55@gmail.com')
+
+    response = MissionFacade.driving_directions(user1, user2)
+
+    expect(response).to be_an(Array)
+    expect(response.first).to eq('Start out going north on Madison St toward 2nd St.')
+  end
+
+  it 'shows distance between locations' do
+    evacuee = UserFacade.user_by_email('phmedlin@gmail.com')
+    rescuer = UserFacade.user_by_email('mdodson55@gmail.com')
+
+    result = MissionFacade.distance(rescuer, evacuee)
+
+    expect(result).to eq(2.31)
+  end
+
+  it 'shows missions near resucer' do
+    rescuer = UserFacade.user_by_email('lesleyasanders@gmail.com')
+
+    result = MissionFacade.missions_near_rescuer(rescuer)
+
+    expect(result.count).to eq(1)
+    expect(result.first.id).to eq(2)
+  end
 end

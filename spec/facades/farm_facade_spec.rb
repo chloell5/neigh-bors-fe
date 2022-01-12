@@ -8,7 +8,7 @@ RSpec.describe 'Farm Facade' do
   end
 
   it 'gets one farm' do
-    user1 = 'mdodson55@gmail.com'
+    user1 = 3
     response = FarmFacade.find_farm(user1)
 
     expect(response).to be_a(Farm)

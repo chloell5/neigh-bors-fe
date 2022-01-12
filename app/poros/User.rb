@@ -19,5 +19,4 @@ class User
     end
     farm
   end
-
 end
