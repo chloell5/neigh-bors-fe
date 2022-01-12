@@ -13,6 +13,7 @@ class UserFacade
     end
 
     def create_user(data)
+      require "pry"; binding.pry
       data = UserService.post_data("users?name=#{data[:name]}&email=#{data[:email]}&phone=#{data[:phone]}&address=#{data[:address]}")
       User.new(data)
     end
@@ -27,7 +28,6 @@ class UserFacade
     end
 
     def driving_directions(user1, user2)
-
       location1 = user1.address
       location2 = user2.address
 

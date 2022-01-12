@@ -20,7 +20,6 @@ RSpec.describe User do
 
   it 'exists with attributes' do
     expect(user).to be_a(User)
-
     expect(user.name).to eq('Didi')
     expect(user.email).to eq('mdodson55@gmail.com')
     expect(user.phone).to eq('555-555-5555')
