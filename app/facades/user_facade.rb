@@ -14,7 +14,6 @@ class UserFacade
 
     def create_user(data)
       data = UserService.post_data("users?name=#{data[:name]}&email=#{data[:email]}&phone=#{data[:phone]}&address=#{data[:address]}")[:data]
-
       User.new(data)
     end
 
