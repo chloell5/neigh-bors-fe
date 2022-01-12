@@ -18,5 +18,21 @@ class MissionFacade
       data = MissionService.post_data(
         "missions?farm_id=#{mission_data[:farm_id]}")
     end
+
+    def driving_directions(user1, user2)
+
+      location1 = user1.address
+      location2 = user2.address
+
+      directions = MapService.farm_directions(location1, location2)
+
+      directions.map do |dir|
+        dir[:narrative]
+      end
+    end
+
+    def distance(user1, user2)
+
+    end
   end
 end

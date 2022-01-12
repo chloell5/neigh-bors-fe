@@ -1,4 +1,10 @@
-<h1>Pending Unassigned Evacuations</h1>
+<h1>Pending Unassigned Evacuations Near Me</h1>
 <% @missions.each do |m| %>
-<p>Mission ID: <%= m.id %></p><br>
+# contact info for evacuee
+# distance from current_user
+# button to "Self Assign", which will assign
+# current_user to that mission by updating Mission (backend)
+# button to Self Assign will redirect to Mission Show page
+<p>Mission ID: <%= m.id %><br>
+</p>
 <% end %>
