@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def create
     all_users = UserFacade.all_users
 
@@ -9,13 +8,11 @@ class SessionsController < ApplicationController
 
     if email_array.include?(helper_hash[:email])
       user = UserFacade.user_by_email(helper_hash[:email])
-
       session[:user_id] = user.id
 
       redirect_to dashboard_path
     else
       user = UserFacade.create_user(default_user_hash)
-
       session[:user_id] = user.id
 
       redirect_to '/users/register'
