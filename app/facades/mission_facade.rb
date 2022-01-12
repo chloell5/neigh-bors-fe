@@ -20,7 +20,6 @@ class MissionFacade
     end
 
     def driving_directions(user1, user2)
-
       location1 = user1.address
       location2 = user2.address
 

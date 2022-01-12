@@ -10,7 +10,7 @@ class MissionsController < ApplicationController
 
     rescuer = UserFacade.find_by_id("#{mission.rescuer_id}")
     @evacuee = UserFacade.find_by_id("#{mission.evacuee_id}")
-    @directions = UserFacade.driving_directions(rescuer, @evacuee)
+    @directions = MissionFacade.driving_directions(rescuer, @evacuee)
   end
 
   def new
