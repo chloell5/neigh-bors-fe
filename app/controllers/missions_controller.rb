@@ -1,6 +1,6 @@
 class MissionsController < ApplicationController
   def index
-    @missions = MissionFacade.all_missions
+    @missions = MissionFacade.missions_near_rescuer(current_user)
   end
 
   def show
@@ -8,7 +8,7 @@ class MissionsController < ApplicationController
 
     rescuer = UserFacade.find_by_id("#{mission.rescuer_id}")
     @evacuee = UserFacade.find_by_id("#{mission.evacuee_id}")
-    @directions = UserFacade.driving_directions(rescuer, @evacuee)
+    @directions = MissionFacade.driving_directions(rescuer, @evacuee)
   end
 
   def new
@@ -17,13 +17,16 @@ class MissionsController < ApplicationController
   end
 
   def create
-    # message = "*TESTING* A Neigh-bors user near you has requested evacuation assistance. Log in to your Neigh-bors account to view details and accept assignment."
-    # recipient = "nearby user phone number goes here"
-    # in reality it will be iterated through multiple numbers, not just one.
+    message = "*TESTING* A Neigh-bors user near you has requested evacuation assistance. Log in to your Neigh-bors account to view details and accept assignment."
+    recipient = ""
+
     farm_id = FarmFacade.find_farm(current_user.id).backend_id
+
     mission = MissionFacade.mission_create({:farm_id => farm_id})
-    # t = TwilioTextMessenger.new(message, recipient)
-    # t.call
+
+    t = TwilioTextMessenger.new(message, recipient)
+    t.call
+
     redirect_to '/dashboard'
   end
 

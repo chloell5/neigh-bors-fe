@@ -6,4 +6,12 @@ class Mission
     @rescuer_id = data[:attributes][:user_id]
     @evacuee_id = data[:attributes][:farm_id]
   end
+
+  def farm_address
+    farm = FarmFacade.find_farm(@evacuee_id).address
+  end
+
+  def evacuee
+    UserFacade.find_by_id(@evacuee_id)
+  end  
 end
