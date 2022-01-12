@@ -7,7 +7,6 @@ class MissionFacade
 
     def all_missions
       data = MissionService.get_data("missions")
-
       data.map do |mission|
         Mission.new(mission)
       end
