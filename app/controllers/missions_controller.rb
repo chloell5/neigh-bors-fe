@@ -12,18 +12,19 @@ class MissionsController < ApplicationController
   end
 
   def new
-    @farm = FarmFacade.find_farm(2)
-    @user = UserFacade.find_by_id(2)
+    @farm = FarmFacade.find_farm(current_user.id)
+    @user = UserFacade.find_by_id(current_user.id)
   end
 
   def create
-    mission = MissionFacade.mission_create(mission_params)
+    farm_id = FarmFacade.find_farm(current_user.id).backend_id
+    mission = MissionFacade.mission_create({:farm_id => farm_id})
     redirect_to '/dashboard'
   end
 
   private
 
   def mission_params
-    params.permit(:mission_id, :rescuer_id, :evacuee_id)
+    params.permit(:mission_id, :rescuer_id, :farm_id, :evacuee_id)
   end
 end

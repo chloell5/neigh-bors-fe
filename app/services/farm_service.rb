@@ -14,5 +14,11 @@ class FarmService
 
       JSON.parse(response.body, symbolize_names: true)
     end
+
+    def patch_data(url)
+      response = conn.patch(url)
+
+      JSON.parse(response.body, symbolize_names: true)
+    end
   end
 end

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    UserFacade.update_user(params)
+    UserFacade.update_user(params, current_user.id)
     redirect_to '/farms/register'
   end
 end

@@ -16,8 +16,7 @@ class MissionFacade
 
     def mission_create(mission_data)
       data = MissionService.post_data(
-        "missions?user_id=2")
-      farm = Farm.new(data)
+        "missions?farm_id=#{mission_data[:farm_id]}")
     end
   end
 end

@@ -17,8 +17,8 @@ class UserFacade
       User.new(data)
     end
 
-    def update_user(data)
-      data = UserService.patch_data("users?name=#{data[:name]}&email=#{data[:email]}&phone=#{data[:phone]}&address=#{data[:address]}")
+    def update_user(data, user_id)
+      data = UserService.patch_data("users?id=#{user_id.to_i}&name=#{data[:name]}&email=#{data[:email]}&phone=#{data[:phone]}&address=#{data[:address]}")
     end
 
     def find_by_id(id)
