@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   patch 'users', to: 'users#edit'
 
   get 'farms/register', to: 'farms#new'
+  get 'farms/edit', to: 'farms#edit'
+  patch 'farms', to: 'farms#update'
   post '/farms', to: 'farms#create'
   get '/dashboard', to: 'farms#show'
 

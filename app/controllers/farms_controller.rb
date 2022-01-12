@@ -15,7 +15,12 @@ class FarmsController < ApplicationController
   end
 
   def edit
-    @farm = Farm.find(params[:id])
+    @farm = FarmFacade.find_farm(current_user.id)
+  end
+
+  def update
+    FarmFacade.farm_update(farm_params, current_user.id)
+    redirect_to '/dashboard'
   end
 
   private
