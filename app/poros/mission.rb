@@ -3,7 +3,11 @@ class Mission
 
   def initialize(data)
     @id = data[:id].to_i
-    @rescuer_id = data[:attributes][:user_id]
+    @rescuer_id = if data[:attributes][:user_id] != nil
+                    data[:attributes][:user_id]
+                  else
+                    nil
+                  end
     @evacuee_id = data[:attributes][:farm_id]
   end
 
@@ -13,5 +17,5 @@ class Mission
 
   def evacuee
     UserFacade.find_by_id(@evacuee_id)
-  end  
+  end
 end

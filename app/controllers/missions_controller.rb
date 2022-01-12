@@ -17,16 +17,15 @@ class MissionsController < ApplicationController
   end
 
   def create
-    message = "*TESTING* A Neigh-bors user near you has requested evacuation assistance. Log in to your Neigh-bors account to view details and accept assignment."
-    recipient = ""
-
     farm_id = FarmFacade.find_farm(current_user.id).backend_id
-
     mission = MissionFacade.mission_create({:farm_id => farm_id})
-
-    t = TwilioTextMessenger.new(message, recipient)
-    t.call
-
+    recipients = MissionFacade.close_users_phones(mission)
+    message = "*TESTING* A Neigh-bors user near you has requested evacuation assistance.
+              Log in to your Neigh-bors account to view details and accept assignment."
+    recipients.each do |recipient|
+      t = TwilioTextMessenger.new(message, recipient)
+      # t.call
+    end
     redirect_to '/dashboard'
   end
 
