@@ -19,4 +19,12 @@ RSpec.describe Mission do
     expect(mission.rescuer_id).to eq(3)
     expect(mission.evacuee_id).to eq(4)
   end
+
+  it 'finds a farm address' do
+    expect(mission.farm_address).to eq('330 Montgomery Street Jersey City, NJ 07302')
+  end
+
+  it 'finds a farm evacuee' do
+    expect(mission.evacuee.id).to eq('4')
+  end
 end
