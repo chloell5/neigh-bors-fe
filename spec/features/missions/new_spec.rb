@@ -22,9 +22,15 @@ RSpec.describe 'Mission New' do
     visit missions_new_path
 
     click_button 'Edit'
-save_and_open_page
-    expect(page).to have_current_path(edit_farm_path)
+
+    expect(page).to have_content("#{@farm.name}'s Edit")
   end
 
-  it 'submits when clicked'
+  it 'submits when clicked' do
+    visit missions_new_path
+
+    click_button 'Submit'
+
+    expect(page).to have_current_path(dashboard_path)
+  end
 end
