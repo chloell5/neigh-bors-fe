@@ -12,7 +12,7 @@ RSpec.describe UserService do
     expect(response.first[:attributes]).to have_key(:email)
   end
 
-  xit 'posts data to API' do
+  it 'posts data to API' do
     response = UserService.post_data("users?name=Larry&email=larry@gmail.com&phone=1234598&address=123FakeAddress")[:data]
 
     expect(response).to be_a(Hash)
