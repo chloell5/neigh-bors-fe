@@ -4,108 +4,50 @@
     <br>
 
     <div class="row">
-      <div class="col-3">
-      </div>
-      <div class="col-3">
-        <div class="text-center">
+      <div class="invis-box">
+        <div class="center">
           <%= button_to 'Request Rescue', '/missions/new', method: :get %>
         </div>
       </div>
-      <div class="col-3">
-        <div class="text-center">
+      <div class="invis-box">
+        <div class="center">
           <%= button_to 'Provide Assistance', '/missions', method: :get %>
-          <br>
-          <p>Current availability status:</p>
-          <% if @user.available == true %>
-          <%= 'Available for rescue assignment' %>
-          <% else %>
-          <%=  'Unavailable' %>
-          <% end %>
         </div>
       </div>
     </div>
     <br>
 
     <div class="row">
-      <div class="col-2">
-      </div>
-      <div class="col-2">
+      <div class="content-box">
         <h3>Farm Info:</h3>
+        <p>Farm Name:
+          <%= @farm.name %></p>
+        <p>Farm Address:
+          <%= @farm.address %></p>
+        <p>Number of Horses:
+          <%= @farm.animals %></p>
+        <div class="text-center">
+          <%= button_to 'Edit Farm', 'farms/edit', method: :get %>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <h3>User Info:</h3>
+        <p>User Name:
+          <%= @user.name %></p>
+        <p>Email:
+          <%= @user.email %></p>
+        <p>Trailer Carrying Capacity:
+          <%= @user.trailer_capacity %></p>
+        <div class="text-center">
+          <%= button_to 'Edit User', '/missions', method: :get %>
+        </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-2">
-      </div>
-      <div class="col-2">
-        <p>
-          Name: <%= @farm.name %>
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-2">
-      </div>
-      <div class="col-2">
-        <p>
-          Address: <%= @farm.address %>
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-2">
-      </div>
-      <div class="col-2">
-        <p>
-          Phone #: <%= @user.phone %>
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-2">
-      </div>
-      <div class="col-2">
-        <p>
-          Email: <%= @user.email %>
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-2">
-      </div>
-      <div class="col-2">
-        <p>
-          Number of Horses: <%= @farm.animals %>
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-2">
-      </div>
-      <div class="col-2">
-        <p>
-          Trailer Carrying Capacity: <%= @user.trailer_capacity %>
-        </p>
-      </div>
-    </div>
-    <br>
-    <br>
-
-    <div class="row">
-      <div class="col-3">
-      </div>
-      <div class="col-2">
-        <%= button_to 'Edit', 'farms/edit', method: :get %>
-      </div>
-    </div>
   </div>
 </div>
 
-<div class ="footer">
+<div class="footer">
   <%= link_to "Resources", resources_path %>
 </div>
