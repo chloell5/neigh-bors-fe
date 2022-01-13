@@ -13,21 +13,13 @@ RSpec.describe 'User Facade' do
     expect(response).to be_a(User)
   end
 
-  it 'creates a new user' do
-    # Rails.application.env_config["devise.mapping"] = Devise.mappings[:user]
-    # Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
-
+  xit 'creates a new user' do
     user_data = {
                   name: "Sally",
                   email: "sallybrown22@gmail.com",
                   phone: "555-555-5555",
                   address: "801 Hudson Street Hoboken, NJ 07030"
                 }
-
-    # OnmiAuth.config.mock_auth[:google] = {provider: "Google", uid: "sally@gmail.com",
-    #                                      credentials: {token: "mock_token", secret:  "mock_secret"}}
-
-    # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_data)
 
     response = UserFacade.create_user(user_data)
     expect(response).to be_a(User)
