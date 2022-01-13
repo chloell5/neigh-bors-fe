@@ -57,6 +57,12 @@ class MissionFacade
       mission = Mission.new(data)
     end
 
+    def mission_update(mission_id, user_id)
+      data = MissionService.patch_data(
+        "missions/#{mission_id}?user_id=#{user_id}")
+      mission = Mission.new(data)
+    end
+
     def driving_directions(rescuer, evacuee)
       location1 = rescuer.address
       location2 = evacuee.address

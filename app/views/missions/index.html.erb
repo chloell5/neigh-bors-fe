@@ -7,24 +7,30 @@
         <% @missions.each do |m| %>
           <div class="content-box">
             <div class="farm">
-              <h3><%= link_to FarmFacade.find_farm(m.evacuee_id).name, mission_show_path(m.id) %></h3>
+              <h3><%= m.evacuee.farm.name %></h3>
 
               <ul>
+                Contact:
                 <li>
-                  <%= FarmFacade.find_farm(m.evacuee_id).address %>
+                  <%= m.evacuee.name %>
                 </li>
                 <li>
-                  <%= FarmFacade.find_farm(m.evacuee_id).animals %>
+                  <%= m.evacuee.address %>
+                </li>
+                <li>
+                  <%= m.evacuee.phone %>
+                </li>
+                <li>
+                  <%= m.evacuee.farm.animals %>
                   horses
                 </li>
                 <li>
-                  <%= MissionFacade.distance(current_user, FarmFacade.find_farm(m.evacuee_id)) %>
+                  <%= MissionFacade.distance(current_user, m.evacuee) %>
                   miles away
                 </li>
               </ul>
 
-              <%# This button doesn't work yet, will need to talk about it tomorrow  %>
-                <%= button_to "Self Assign", '/missions', method: :post %>
+                <%= button_to "Self Assign", "/missions/#{m.id}", method: :patch %>
               </div>
             </div>
             <% i+= 1 %>

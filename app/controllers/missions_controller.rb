@@ -29,6 +29,12 @@ class MissionsController < ApplicationController
     redirect_to '/dashboard'
   end
 
+  def update
+    mission_id = params[:id]
+    MissionFacade.mission_update(mission_id, current_user.id)
+    redirect_to "/missions/#{mission_id}"
+  end
+
   private
 
   def mission_params

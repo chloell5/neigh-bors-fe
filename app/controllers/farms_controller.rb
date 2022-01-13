@@ -25,6 +25,6 @@ class FarmsController < ApplicationController
   private
 
   def farm_params
-    params.permit(:name, :address, :number_of_animals, :special_needs?, :special_needs_details)
+    params.permit(:name, :address, :number_of_animals, :special_needs, :special_needs_details)
   end
 end
