@@ -73,5 +73,16 @@ class MissionFacade
         dir[:narrative]
       end
     end
+
+    def find_by_rescuer(rescuer)
+      data = MissionService.get_data("missions")
+      missions = []
+      data.each do |mission|
+        if mission[:attributes][:user_id] == rescuer.to_i
+          missions << Mission.new(mission)
+        end
+      end
+      missions
+    end
   end
 end
