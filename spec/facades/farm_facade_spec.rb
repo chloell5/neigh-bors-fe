@@ -15,9 +15,9 @@ RSpec.describe 'Farm Facade' do
   end
 
   it 'creates a farm' do
-    user_id = 13
+    user_id = 6
     data = {
-            name: "Bobs Burros",
+            name: "Bobs+Burros",
             number_of_animals: 12,
             address: '123FakeAddress',
             special_needs?: false}
@@ -29,7 +29,7 @@ RSpec.describe 'Farm Facade' do
   end
 
   it 'updates a farm' do
-    user_id = 13
+    user_id = 6
     data = {
             name: "Bobs Burros",
             number_of_animals: 17,
