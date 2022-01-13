@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'User Registration' do
-  xit 'title' do
+  it 'title' do
     visit root_path
 
     click_button "Login with Google"
@@ -27,7 +27,7 @@ RSpec.describe 'User Registration' do
     expect(page).to have_content("Tell us about yourself")
   end
 
-  xit 'form' do
+  it 'form' do
     visit users_register_path
 
     expect(page).to have_content("Name")
@@ -42,7 +42,7 @@ RSpec.describe 'User Registration' do
     expect(page).to have_radio_button(:available_for_missions?)
   end
 
-  xit 'buttons' do
+  it 'buttons' do
     visit users_register_path
 
     expect(page).to have_radio_button(:available_for_missions?)
