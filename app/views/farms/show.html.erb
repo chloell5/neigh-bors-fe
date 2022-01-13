@@ -35,12 +35,13 @@
         <h3>User Info:</h3>
         <p>User Name:
           <%= @user.name %></p>
+
         <p>Email:
           <%= @user.email %></p>
         <p>Trailer Carrying Capacity:
           <%= @user.trailer_capacity %></p>
         <div class="text-center">
-          <%= button_to 'Edit User', '/missions', method: :get %>
+          <%= button_to 'Edit User', '/users/edit', method: :get %>
         </div>
       </div>
     </div>

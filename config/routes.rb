@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
 
   get 'users/register', to: 'users#register'
-  patch 'users', to: 'users#edit'
+  get 'users/edit', to: 'users#edit'
+  patch 'users', to: 'users#update'
 
   get 'farms/register', to: 'farms#new'
   get 'farms/edit', to: 'farms#edit'

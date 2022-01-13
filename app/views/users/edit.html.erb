@@ -1,0 +1,65 @@
+<div class="container">
+  <h1 class="text-center"><%= @user.name %>'s Edit</h1>
+  <br>
+  <br>
+
+  <%= form_with url: '/users', method: :patch do |form| %>
+    <div class="row">
+      <div class="col-1">
+      </div>
+      <div class="col-2">
+        <%= form.label :name, "User Name:" %>
+      </div>
+      <div class="col-2">
+        <%= form.text_field :name, value: @user.name %>
+      </div>
+      <div class="col-1">
+      </div>
+      
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-1">
+      </div>
+      <div class="col-2">
+        <%= form.label :rescuer_trailer_capacity, "Rescuer trailer capacity:" %>
+      </div>
+      <div class="col-2">
+        <%= form.number_field :rescuer_trailer_capacity, value: @user.trailer_capacity %>
+      </div>
+      <div class="col-1">
+      </div>
+      <div class="col-2">
+        <%= form.label :is_available_for_missions?, "Available for rescue assignment?" %>
+      </div>
+      <div class="col-2">
+        <%= form.radio_button :is_available_for_missions?, true %>Yes &nbsp;
+        <%= form.radio_button :is_available_for_missions, false %>No
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-1">
+      </div>
+
+      <div class="col-1">
+      </div>
+      <div class="col-2">
+        <%= form.label :phone, "Phone:" %>
+      </div>
+      <div class="col-2">
+        <%= form.text_field :phone, value: @user.phone %>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-6">
+      </div>
+      <div class="col-1">
+        <%= form.submit "Submit" %>
+      </div>
+    </div>
+  <% end %>
+</div>
