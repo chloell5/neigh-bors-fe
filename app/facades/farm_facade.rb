@@ -20,7 +20,8 @@ class FarmFacade
 
     def farm_update(farm_data, user_id)
       id = find_farm(user_id).backend_id
-      data = FarmService.patch_data(
+      UserService.patch_data("users/#{user_id}?&address=#{farm_data[:address]}")
+      FarmService.patch_data(
         "farms/#{id}?name=#{farm_data[:name]}&number_of_animals=#{farm_data[:number_of_animals]}&address=#{farm_data[:address]}&special_needs?=#{farm_data[:special_needs_details]}")[:data]
     end
   end

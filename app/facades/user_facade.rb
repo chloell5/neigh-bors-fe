@@ -14,11 +14,14 @@ class UserFacade
 
     def create_user(data)
       data = UserService.post_data("users?name=#{data[:name]}&email=#{data[:email]}&phone=#{data[:phone]}&address=#{data[:address]}")[:data]
+
       User.new(data)
     end
 
     def update_user(data, user_id)
-      data = UserService.patch_data("users?id=#{user_id.to_i}&name=#{data[:name]}&email=#{data[:email]}&phone=#{data[:phone]}&address=#{data[:address]}")
+      farm = FarmService.get_data("farms?user_id=#{user_id}")
+
+      data = UserService.patch_data("users/#{user_id.to_i}?name=#{data[:name]}&rescuer_trailer_capacity=#{data[:rescuer_trailer_capacity]}&phone=#{data[:phone]}&address=#{farm[:attributes][:address]}")
     end
 
     def find_by_id(id)

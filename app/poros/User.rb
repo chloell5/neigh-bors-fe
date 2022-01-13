@@ -17,15 +17,6 @@ class User
     @address = data[:attributes][:address]
   end
 
-  def users
-    users = UserFacade.all_users
-
-    user = users.find do |user|
-      user.id == @id.to_i
-    end
-    user
-  end
-
   def farm
     farms = FarmFacade.all_farms
 
@@ -34,4 +25,13 @@ class User
     end
     farm
   end
+
+  # def users
+  #   users = UserFacade.all_users
+  #
+  #   user = users.find do |user|
+  #     user.id == @id.to_i
+  #   end
+  #   user
+  # end
 end
