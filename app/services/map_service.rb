@@ -21,7 +21,7 @@ class MapService
         req.params['to'] = "#{location2}"
       end
 
-      JSON.parse(result.body, symbolize_names: true)[:route][:legs][0][:distance]
+      JSON.parse(result.body, symbolize_names: true)[:route][:distance]
     end
   end
 end
