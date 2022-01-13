@@ -44,6 +44,10 @@
    margin: auto;
  }
 
+ .alert-box a:link { color: white; }
+ .alert-box a:visited { color: white; }
+ .alert-box a:hover { color: white; }
+
  .center {
   margin: 0;
   position: absolute;

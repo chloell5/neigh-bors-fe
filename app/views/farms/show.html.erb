@@ -50,7 +50,27 @@
         </div>
       </div>
     </div>
+    <br>
 
+    <div class="row">
+
+    </div>
+
+    <div class="row">
+      <div class="alert-box">
+        <div class="text-center">
+          <h3>My Currently Accepted Missions</h3>
+          <% if @missions.length > 0 %>
+            <% @missions.each do |m| %>
+              <%= link_to m.evacuee.farm.name, mission_show_path(m.id) %>
+              <br>
+            <% end %>
+          <% else %>
+            <p>Not currently assigned any missions. Click 'Provide Assistance' to review unassigned evacuation missions in your area</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
