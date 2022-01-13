@@ -1,10 +1,22 @@
 <h1>Pending Unassigned Evacuations Near Me</h1>
+<br>
 <% @missions.each do |m| %>
-# contact info for evacuee
-# distance from current_user
-# button to "Self Assign", which will assign
-# current_user to that mission by updating Mission (backend)
-# button to Self Assign will redirect to Mission Show page
-<p>Mission ID: <%= m.id %><br>
-</p>
+<div class="farm">
+  <h3><%= link_to FarmFacade.find_farm(m.evacuee_id).name, mission_show_path(m.id) %></h3>
+  <ul>
+    <li>
+      <%= FarmFacade.find_farm(m.evacuee_id).address %>
+    </li>
+    <li>
+      <%= FarmFacade.find_farm(m.evacuee_id).animals %> horses
+    </li>
+    <li>
+      <%= MissionFacade.distance(current_user, FarmFacade.find_farm(m.evacuee_id)) %> miles away
+    </li>
+  </ul>
+  <%# This button doesn't work yet, will need to talk about it tomorrow  %>
+  <%= button_to "Self Assign", '/missions', method: :post %>
+  <br>
+  <br>
+</div>
 <% end %>
