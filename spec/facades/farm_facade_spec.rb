@@ -14,7 +14,7 @@ RSpec.describe 'Farm Facade' do
     expect(response).to be_a(Farm)
   end
 
-  xit 'creates a farm' do
+  it 'creates a farm' do
     user_id = 13
     data = {
             name: "Bobs Burros",

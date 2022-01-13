@@ -46,15 +46,4 @@ RSpec.describe User do
     expect(user.farm.address).to eq(@farm[:attributes][:address])
     expect(user.farm.user_id).to eq(@farm[:attributes][:user_id])
   end
-
-  it 'users' do
-    response = user.users
-    expect(response.id).to be_an(Integer)
-  end
-
-  it 'farm' do
-    response = user.farm
-
-    expect(response.id).to be_an(Integer)
-  end
 end
