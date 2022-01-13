@@ -8,13 +8,12 @@
     </ul
     <form class="d-flex">
       <div class="white-text">
-        Status:
         <% if defined?(@user) %>
           <% if @user.available == true %>
-            <%= 'Available for rescue assignment' %>
+            Status: <%= 'Available for rescue assignment' %>
+            <% else %>
+            Status:  <%= 'Unavailable' %>
           <% end %>
-        <% else %>
-        <%= 'Unavailable' %>
         <% end %>
       </div>
     </form>

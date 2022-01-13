@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def update
     UserFacade.update_user(params, current_user.id)
-    
+
     if params[:register] == 'true'
       redirect_to '/farms/register'
     else

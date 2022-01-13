@@ -26,6 +26,10 @@
           <%= @farm.address %></p>
         <p>Number of Horses:
           <%= @farm.animals %></p>
+        <p>Special needs?:
+          <%= @farm.special_needs %></p>
+        <p>Special needs details:
+          <%= @farm.special_needs_details %></p>
         <div class="text-center">
           <%= button_to 'Edit Farm', 'farms/edit', method: :get %>
         </div>

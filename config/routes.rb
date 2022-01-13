@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/missions', to: 'missions#index'
   get '/missions/new', to: 'missions#new'
   post '/missions', to: 'missions#create'
+  patch '/missions/:id', to: 'missions#update'
 
   resources :farms, only: [:show, :edit]
   resources :resources, only: :index
