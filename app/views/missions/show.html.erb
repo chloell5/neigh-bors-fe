@@ -1,10 +1,15 @@
-
-<h1><%= @evacuee.farm.name %><br></h1>
-
-Address: <%= @evacuee.farm.address %><br>
-
-Contact Number: <%= @evacuee.phone %><br>
-
-Directions: <% @directions.each do |dir| %>
-  <li><%= dir %></li>
-<% end %>
+<div class="page-container">
+  <div class="content-wrap">
+    <div class="text-center">
+      <h1><%= @evacuee.farm.name %><br></h1>
+      <p>Address: <%= @evacuee.farm.address %></p>
+      <p>Contact Number: <%= @evacuee.phone %></p>
+      <p>Directions:</p>
+    </div>
+    <div class="content-box">
+      <% @directions.each do |dir| %>
+        <li><%= dir %></li>
+      <% end %>
+    </div>
+  </div>
+</div>

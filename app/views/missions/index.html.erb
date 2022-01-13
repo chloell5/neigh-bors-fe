@@ -1,22 +1,40 @@
-<h1>Pending Unassigned Evacuations Near Me</h1>
-<br>
-<% @missions.each do |m| %>
-<div class="farm">
-  <h3><%= link_to FarmFacade.find_farm(m.evacuee_id).name, mission_show_path(m.id) %></h3>
-  <ul>
-    <li>
-      <%= FarmFacade.find_farm(m.evacuee_id).address %>
-    </li>
-    <li>
-      <%= FarmFacade.find_farm(m.evacuee_id).animals %> horses
-    </li>
-    <li>
-      <%= MissionFacade.distance(current_user, FarmFacade.find_farm(m.evacuee_id)) %> miles away
-    </li>
-  </ul>
-  <%# This button doesn't work yet, will need to talk about it tomorrow  %>
-  <%= button_to "Self Assign", '/missions', method: :post %>
-  <br>
-  <br>
-</div>
-<% end %>
+<div class="page-container">
+  <div class="content-wrap">
+    <h1 class="text-center">Pending Unassigned Evacuations Near Me</h1>
+    <br>
+    <div class="row">
+      <% i = 0 %>
+        <% @missions.each do |m| %>
+          <div class="content-box">
+            <div class="farm">
+              <h3><%= link_to FarmFacade.find_farm(m.evacuee_id).name, mission_show_path(m.id) %></h3>
+
+              <ul>
+                <li>
+                  <%= FarmFacade.find_farm(m.evacuee_id).address %>
+                </li>
+                <li>
+                  <%= FarmFacade.find_farm(m.evacuee_id).animals %>
+                  horses
+                </li>
+                <li>
+                  <%= MissionFacade.distance(current_user, FarmFacade.find_farm(m.evacuee_id)) %>
+                  miles away
+                </li>
+              </ul>
+
+              <%# This button doesn't work yet, will need to talk about it tomorrow  %>
+                <%= button_to "Self Assign", '/missions', method: :post %>
+              </div>
+            </div>
+            <% i+= 1 %>
+              <% if i % 2 == 0 %>
+              </div>
+              <br>
+              <div class="row">
+              <% end %>
+
+            <% end %>
+          </div>
+        </div>
+      </div>
