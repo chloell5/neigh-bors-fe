@@ -78,3 +78,16 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+OmniAuth.config.test_mode = true
+OmniAuth.config.mock_auth[:xing] = OmniAuth::AuthHash.new({
+  :provider => 'google',
+  :uid => '123545',
+  :info => {
+    :name => "Test",
+    :email => "test@gmail.com"
+  },
+  :credentials => {
+    :token => "token",
+    :secret => "secret"
+}})

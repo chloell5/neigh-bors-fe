@@ -13,31 +13,35 @@ RSpec.describe 'User Facade' do
     expect(response).to be_a(User)
   end
 
-  xit 'creates a new user' do
-    user_data = {
+  it 'creates a new user' do
+    # Rails.application.env_config["oauth"] = users_register_path # If using Devise
+    Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google]
+
+    user = UserFacade.create_user({
                   name: "Sally",
                   email: "sallybrown22@gmail.com",
                   phone: "555-555-5555",
                   address: "801 Hudson Street Hoboken, NJ 07030"
-                }
+                })
 
-    response = UserFacade.create_user(user_data)
-    expect(response).to be_a(User)
-    expect(response.name).to eq("Sally")
-    # expect(response.address).to eq("801 Hudson Street Hoboken, NJ 07030")
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    expect(user).to be_a(User)
+    expect(user.name).to eq("Sally")
+    expect(user.address).to eq("801 Hudson Street Hoboken, NJ 07030")
   end
 
   xit 'updates a user' do
-    user_id = 15
+    user_id = 1
     user_data = {
-                  name: "Sally Brown",
-                  email: "sallybrown22@gmail.com",
-                  phone: "555-555-5555",
-                  address: "801 Hudson Street Hoboken, NJ 07030"
+                  name: "Lesley A",
+                  email: "lesleyasanders@gmail.com",
+                  phone: "444-555-6666",
+                  address: "727 Garden Street Hoboken, NJ 07030"
                 }
     response = UserFacade.update_user(user_data, user_id)
 
-    expect(response[:attributes][:name]).to eq("Sally Brown")
+    expect(response[:attributes][:name]).to eq("Sally A")
   end
 
   it 'finds one user by id' do
