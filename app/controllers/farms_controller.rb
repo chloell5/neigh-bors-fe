@@ -11,7 +11,8 @@ class FarmsController < ApplicationController
   def show
     @farm = FarmFacade.find_farm(current_user.id)
     @user = UserFacade.find_by_id(current_user.id)
-    @missions = MissionFacade.find_by_rescuer(current_user.id)
+    @rescuer_missions = MissionFacade.find_by_rescuer(current_user.id)
+    @evacuee_missions = MissionFacade.find_by_evacuee(current_user.id)
   end
 
   def edit

@@ -45,7 +45,9 @@ class MissionFacade
         evacuee = mission.evacuee
         distance = MissionFacade.distance(rescuer, evacuee)
         if distance <= 30.0 && mission.rescuer_id == nil
-          dis << mission
+          if mission.evacuee.id != current_user.id
+            dis << mission
+          end
         end
       end
       dis
@@ -72,6 +74,18 @@ class MissionFacade
       directions.map do |dir|
         dir[:narrative]
       end
+    end
+
+    def find_by_evacuee(evacuee_id)
+      data = MissionService.get_data("missions")
+      evacuee = UserFacade.find_by_id(evacuee_id)
+      missions = []
+      data.each do |mission|
+        if mission[:attributes][:farm_id] == evacuee.farm.backend_id.to_i
+          missions << Mission.new(mission)
+        end
+      end
+      missions
     end
 
     def find_by_rescuer(rescuer)
