@@ -22,8 +22,8 @@ RSpec.describe UserService do
     expect(response[:attributes]).to have_key(:email)
   end
 
-  # xit 'patches data to API' do
-  #   response = UserService.patch_data("users?id=13&name=Larry&email=larry@gmail.com&phone=1239876&address=123FakeAddress")
+  # it 'patches data to API' do
+  #   response = UserService.patch_data("users?id=7&name=Larry&email=larry@gmail.com&phone=1239876&address=123RealAddress")
   #
   #   expect(response).to be_a(Hash)
   #   expect(response).to have_key(:id)

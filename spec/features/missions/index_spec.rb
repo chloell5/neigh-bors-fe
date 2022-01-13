@@ -13,14 +13,6 @@ RSpec.describe 'Mission Index' do
     expect(page).to have_content('Didi\'s Horse Retreat')
   end
 
-  it 'farm name links to mission show' do
-    visit missions_path
-
-    first('.farm').click_link('Didi\'s Horse Retreat')
-
-    expect(page).to have_current_path(mission_show_path(2))
-  end
-
   it 'shows total number of horses' do
     visit missions_path
 
