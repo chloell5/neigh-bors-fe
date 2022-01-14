@@ -60,8 +60,8 @@
       <div class="alert-box">
         <div class="text-center">
           <h3>My Currently Accepted Missions</h3>
-          <% if @missions.length > 0 %>
-            <% @missions.each do |m| %>
+          <% if @rescuer_missions.length > 0 %>
+            <% @rescuer_missions.each do |m| %>
               <%= link_to m.evacuee.farm.name, mission_show_path(m.id) %>
               <br>
             <% end %>
@@ -71,5 +71,36 @@
         </div>
       </div>
     </div>
+<br>
+<br>
+    <div class="row">
+      <div class="alert-box">
+        <div class="text-center">
+          <h3>My Evacuation Request</h3>
+          <% if @evacuee_missions.length > 0 %>
+            <% @evacuee_missions.each do |m| %>
+              <%= link_to m.evacuee.farm.name, mission_show_path(m.id) %><br>
+              <p>Assignment Status:
+                <% if m.rescuer_id.nil? %>
+                    "Unassigned"
+                  <% else %>
+                    Assigned <br>
+                    Rescuer assigned to this mission:
+                    <%= UserFacade.find_by_id("#{m.rescuer_id}").name %>
+                    <%= UserFacade.find_by_id("#{m.rescuer_id}").phone %>
+                  <% end %></p><br>
+              <p>
+               </p>
+            <% end %>
+          <% else %>
+            <p>You have not reqested evacuation assistance. Click 'Request Rescue' to send a text alert with your information to Neigh-bors users in your area and request assistance.</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+<div class="footer">
+  <%= link_to "Resources", resources_path %>
+</div>
+
