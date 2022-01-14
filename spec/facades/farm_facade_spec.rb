@@ -19,6 +19,7 @@ RSpec.describe 'Farm Facade' do
     data = {
             name: "Bobs+Burros",
             number_of_animals: 12,
+            address: "123 Fake Street",
             special_needs?: false}
     response = FarmFacade.farm_create(data, user_id)
 
