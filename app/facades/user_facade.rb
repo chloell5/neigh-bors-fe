@@ -19,9 +19,7 @@ class UserFacade
     end
 
     def update_user(data, user_id)
-      farm = FarmService.get_data("farms?user_id=#{user_id}")
-
-      data = UserService.patch_data("users/#{user_id.to_i}?name=#{data[:name]}&is_available_for_missions%3F=#{data[:is_available_for_missions]}&rescuer_trailer_capacity=#{data[:rescuer_trailer_capacity]}&phone=#{data[:phone]}&address=#{farm[:attributes][:address]}")
+      data = UserService.patch_data("users/#{user_id.to_i}?name=#{data[:name]}&is_available_for_missions%3F=#{data[:is_available_for_missions]}&rescuer_trailer_capacity=#{data[:rescuer_trailer_capacity]}&phone=#{data[:phone]}&address=#{data[:address]}")
     end
 
     def find_by_id(id)
