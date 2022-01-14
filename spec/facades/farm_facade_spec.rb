@@ -19,21 +19,21 @@ RSpec.describe 'Farm Facade' do
     data = {
             name: "Bobs+Burros",
             number_of_animals: 12,
-            address: '123FakeAddress',
+            address: "123 Fake Street",
             special_needs?: false}
     response = FarmFacade.farm_create(data, user_id)
 
     expect(response).to be_a(Farm)
     expect(response.name).to eq("Bobs Burros")
-    expect(response.address).to eq("123FakeAddress")
+    expect(response.address).to eq("123 Fake Street")
   end
 
   it 'updates a farm' do
     user_id = 6
     data = {
             name: "Bobs Burros",
+            address: '123 Fake Street',
             number_of_animals: 17,
-            address: '123FakeAddress',
             special_needs?: false}
     response = FarmFacade.farm_update(data, user_id)
 

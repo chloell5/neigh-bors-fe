@@ -13,6 +13,7 @@ class FarmFacade
     end
 
     def farm_create(farm_data, user_id)
+      user = UserFacade.find_by_id(user_id)
       data = FarmService.post_data(
         "farms?user_id=#{user_id.to_i}&name=#{farm_data[:name]}&number_of_animals=#{farm_data[:number_of_animals]}&address=#{farm_data[:address]}&special_needs?=#{farm_data[:special_needs]}")[:data]
       farm = Farm.new(data)
