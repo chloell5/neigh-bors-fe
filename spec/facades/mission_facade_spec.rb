@@ -30,7 +30,7 @@ RSpec.describe 'Mission Facade' do
     mission = MissionFacade.mission_search(2)
     response = MissionFacade.rescuers_near_mission(mission)
 
-    expect(response.count).to eq(3)
+    expect(response.count).to eq(4)
     expect(response.first.trailer_capacity).to eq(10)
   end
 
