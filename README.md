@@ -1,5 +1,9 @@
 # Neigh-bors
 
+![neighbors-cover](https://user-images.githubusercontent.com/87627363/149588856-705514d0-c06c-4c9a-845b-941c82c735fb.jpg)
+
+![Screen Shot 2022-01-14 at 2 40 01 PM](https://user-images.githubusercontent.com/87627363/149588878-9a8e9e0d-3dec-4638-b8dd-458106c5ff8d.png)
+
 ## Project Description
 The Neigh-bors application is designed to connect farms with volunteer rescuers to evacuate horses during natural disaster events. The app includes both a frontend repo (this repo) and a backend repo (found here: [Neigh-bors Backend Repo](https://github.com/PhiMed/neigh-bors-be). The frontend of this app has been deployed to Heroku at [Neigh-bors](https://neigh-bors-fe.herokuapp.com/).
 
