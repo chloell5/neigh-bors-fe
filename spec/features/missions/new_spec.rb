@@ -32,6 +32,5 @@ RSpec.describe 'Mission New' do
     click_button 'Submit'
 
     expect(page).to have_current_path(dashboard_path)
-    #also test to see if it's added correctly
   end
 end

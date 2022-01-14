@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create', as: 'oauth'
   get 'auth/failure', to: redirect('/')
 
+  delete '/logout', to: 'sessions#destroy', as: 'user_logout'
+  get '/logout',    to: 'sessions#destroy', as: 'logout_user'
+
   get 'users/register', to: 'users#register'
   get 'users/edit', to: 'users#edit'
   patch 'users', to: 'users#update'
